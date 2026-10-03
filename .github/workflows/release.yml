@@ -1,11 +1,8 @@
 name: Release
 
+# Disabled on this fork (needs upstream GPG secrets). See release-fork.yml.
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - dev
 
 jobs:
   release:
