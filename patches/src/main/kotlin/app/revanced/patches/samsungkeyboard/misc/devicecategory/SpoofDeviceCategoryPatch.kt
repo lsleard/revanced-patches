@@ -41,7 +41,7 @@ val spoofDeviceCategoryPatch = bytecodePatch(
     description = "Lets Samsung Keyboard use its tablet UX on non-Samsung tablets, " +
         "for example the split keyboard in portrait. " +
         "The keyboard only checks a Samsung specific system feature, which this patch answers instead.",
-    use = false,
+    default = false,
 ) {
     compatibleWith(COMPATIBILITY_SAMSUNG_KEYBOARD)
     dependsOn(enableNonOneUiPatch)
