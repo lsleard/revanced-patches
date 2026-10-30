@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-24T15:53:09",
-  "description": "# [1.6.0-dev.1](https://github.com/AmpleReVanced/revanced-patches/compare/v1.5.0...v1.6.0-dev.1) (2026-10-24)\n\n\n### Features\n\n* **kakaotalk:** support version `26.9.1` ([23bc0be](https://github.com/AmpleReVanced/revanced-patches/commit/23bc0be6db94b24abb37d9c8bd2a14c809d31104))",
-  "download_url": "https://github.com/AmpleReVanced/revanced-patches/releases/download/v1.6.0-dev.1/patches-1.6.0-dev.1.mpp",
+  "created_at": "2026-10-30T18:51:15",
+  "description": "Fork build v1.6.0-y700.3 from c539ba2b (refactor(Samsung Keyboard): migrate Spoof device category patch to Morphe Patcher 2.0.0)",
+  "download_url": "https://github.com/lsleard/revanced-patches/releases/download/v1.6.0-y700.3/patches-1.6.0-y700.3.mpp",
   "signature_download_url": "",
-  "version": "1.6.0-dev.1"
+  "version": "1.6.0-y700.3"
 }
