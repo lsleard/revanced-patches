@@ -7,10 +7,10 @@ import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.stringOption
+import app.morphe.patcher.util.findMutableMethodOf
+import app.morphe.patcher.util.getReference
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod
 import app.morphe.util.findInstructionIndicesReversed
-import app.morphe.util.findMutableMethodOf
-import app.morphe.util.getReference
 import app.morphe.util.indexOfFirstStringInstruction
 import app.revanced.patches.samsungkeyboard.misc.nononeui.enableNonOneUiPatch
 import app.revanced.patches.samsungkeyboard.shared.Constants.COMPATIBILITY_SAMSUNG_KEYBOARD
