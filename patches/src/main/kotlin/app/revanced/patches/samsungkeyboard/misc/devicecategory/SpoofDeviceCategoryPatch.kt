@@ -3,9 +3,11 @@ package app.revanced.patches.samsungkeyboard.misc.devicecategory
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
-import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.PatchException
-import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.classDefBy
+import app.morphe.patcher.patch.classDefForEach
+import app.morphe.patcher.patch.mutableClassDefBy
+import app.morphe.patcher.patch.patch
 import app.morphe.patcher.patch.stringOption
 import app.morphe.patcher.util.findMutableMethodOf
 import app.morphe.patcher.util.getReference
@@ -36,7 +38,7 @@ private val hasSystemFeatureCompat = ImmutableMethodReference(
 )
 
 @Suppress("unused")
-val spoofDeviceCategoryPatch = bytecodePatch(
+val spoofDeviceCategoryPatch = patch(
     name = "Spoof device category",
     description = "Lets Samsung Keyboard use its tablet UX on non-Samsung tablets, " +
         "for example the split keyboard in portrait. " +
@@ -67,7 +69,7 @@ val spoofDeviceCategoryPatch = bytecodePatch(
     }
 }
 
-private fun BytecodePatchContext.redirectTabletFeatureChecks(): Int {
+private fun redirectTabletFeatureChecks(): Int {
     var replaced = 0
     classDefForEach classLoop@{ classDef ->
         if (classDef.type.startsWith(EXTENSION_PACKAGE)) return@classLoop
@@ -122,7 +124,7 @@ private fun MutableMethod.redirectInvoke(index: Int) {
     replaceInstruction(index, replacement)
 }
 
-private fun BytecodePatchContext.setConfiguredCategory(category: String) {
+private fun setConfiguredCategory(category: String) {
     val method = mutableClassDefBy(classDefBy(DEVICE_CATEGORY_COMPAT_TYPE)).methods.first {
         it.name == "configuredCategory" && it.parameterTypes.isEmpty()
     }
